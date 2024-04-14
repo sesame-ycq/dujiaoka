@@ -27,29 +27,35 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-center">
-                                <span style="vertical-align: inherit;">
-                                    <?php echo e(__('dujiaoka.equipment.what_do_you_need_today'), false); ?>
+                        <?php if(dujiaoka_config_get('homeHead1')): ?>
+                            <h3 class="text-center">
+                                    <span style="vertical-align: inherit;">
+                                    <!--  __('dujiaoka.equipment.what_do_you_need_today') -->
+                                        <?php echo e(dujiaoka_config_get('homeHead1'), false); ?>
 
-                                </span>
-                        </h3>
-                        <div class="separator"></div>
-                        <p class="lead text-center">
-                                <span style="vertical-align: inherit;">
-                                    <?php echo e(__('dujiaoka.equipment.self_promotion'), false); ?>
+                                    </span>
+                            </h3>
+                            <div class="separator"></div>
+                        <?php endif; ?>
+                        <?php if(dujiaoka_config_get('homeHead2')): ?>
+                            <p class="lead text-center">
+                                    <span style="vertical-align: inherit;">
+                                    <!-- __('dujiaoka.equipment.self_promotion')  -->
+                                        <?php echo e(dujiaoka_config_get('homeHead2'), false); ?>
 
-                                </span>
-                        </p>
+                                    </span>
+                            </p>
+                        <?php endif; ?>
                     </div>
                     <div class="col-md-12">
                         <div class="category-menus">
                                 <ul class="nav nav-pills  justify-content-center">
                                     <li class="nav-item">
-                                        <a href="#group-all" data-bs-toggle="tab" class="btn btn-outline-secondary active"><?php echo e(__('dujiaoka.group_all'), false); ?></a>
+                                        <a href="#group-all" data-bs-toggle="tab" class="btn btn-outline-primary active"><?php echo e(__('dujiaoka.group_all'), false); ?></a>
                                     </li>
                                     <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <li class="nav-item">
-                                            <a href="#group-<?php echo e($group['id'], false); ?>" data-bs-toggle="tab" class="btn btn-outline-secondary"><?php echo e($group['gp_name'], false); ?></a>
+                                            <a href="#group-<?php echo e($group['id'], false); ?>" data-bs-toggle="tab" class="btn btn-outline-primary"><?php echo e($group['gp_name'], false); ?></a>
                                         </li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
@@ -190,7 +196,6 @@
             var search_content = $("#searchText").val();
             //var search_content = search_content.toLowerCase();
             if($.trim(search_content)!="") {
-                console.log($.trim(search_content));
                 $(".col").hide().filter(":contains('"+search_content+"')").show();
             } else {
                 $(".col").show();

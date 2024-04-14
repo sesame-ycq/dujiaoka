@@ -15,6 +15,7 @@ return [
         'mail_setting' => '邮件服务',
         'order_push_setting' => '订单推送配置',
         'geetest' => '极验验证',
+        "doc" => "使用文档"
     ],
 
     'fields' => [
@@ -59,6 +60,10 @@ return [
         'geetest_id' => '极验id',
         'geetest_key' => '极验key',
         'is_open_geetest' => '是否开启极验',
+
+        'doc' => 'pdf文件',
+        'homeHead1' => '一级显示文本',
+        'homeHead2' => '二级显示文本',
     ],
     'options' => [
     ],

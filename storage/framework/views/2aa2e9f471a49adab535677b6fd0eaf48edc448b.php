@@ -8,6 +8,8 @@
     <?php if(\request()->getScheme() == "https"): ?>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <?php endif; ?>
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+    <link rel="Bookmark" href="/favicon.ico" />
     <link rel="stylesheet" href="/assets/unicorn/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/unicorn/css/base.css">
     <link rel="stylesheet" href="/assets/unicorn/css/common.css">

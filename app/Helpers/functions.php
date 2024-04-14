@@ -234,3 +234,25 @@ if (!function_exists('assoc_unique')) {
         return $arr;
     }
 }
+
+
+if (! function_exists('assets_svg_get')) {
+
+    /**
+     * 系统配置获取
+     *
+     * @param string $key 要获取的key
+     * @param $default 默认
+     * @return mixed|null
+     *
+     * @author    assimon<ashang@utf8.hk>
+     * @copyright assimon<ashang@utf8.hk>
+     * @link      http://utf8.hk/
+     */
+    function assets_svg_get(string $key, $default = null)
+    {   $path = 'assets/unicorn/svg/';
+        $path .= $key .".svg";
+        // return url($path);
+        return file_get_contents($path);
+    }
+}

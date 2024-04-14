@@ -28,27 +28,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3 class="text-center">
-                                <span style="vertical-align: inherit;">
-                                    {{ __('dujiaoka.equipment.what_do_you_need_today') }}
-                                </span>
-                        </h3>
-                        <div class="separator"></div>
-                        <p class="lead text-center">
-                                <span style="vertical-align: inherit;">
-                                    {{ __('dujiaoka.equipment.self_promotion') }}
-                                </span>
-                        </p>
+                        @if(dujiaoka_config_get('homeHead1'))
+                            <h3 class="text-center">
+                                    <span style="vertical-align: inherit;">
+                                    <!--  __('dujiaoka.equipment.what_do_you_need_today') -->
+                                        {{  dujiaoka_config_get('homeHead1') }}
+                                    </span>
+                            </h3>
+                            <div class="separator"></div>
+                        @endif
+                        @if(dujiaoka_config_get('homeHead2'))
+                            <p class="lead text-center">
+                                    <span style="vertical-align: inherit;">
+                                    <!-- __('dujiaoka.equipment.self_promotion')  -->
+                                        {{ dujiaoka_config_get('homeHead2') }}
+                                    </span>
+                            </p>
+                        @endif
                     </div>
                     <div class="col-md-12">
                         <div class="category-menus">
                                 <ul class="nav nav-pills  justify-content-center">
                                     <li class="nav-item">
-                                        <a href="#group-all" data-bs-toggle="tab" class="btn btn-outline-secondary active">{{ __('dujiaoka.group_all') }}</a>
+                                        <a href="#group-all" data-bs-toggle="tab" class="btn btn-outline-primary active">{{ __('dujiaoka.group_all') }}</a>
                                     </li>
                                     @foreach($data as  $index => $group)
                                         <li class="nav-item">
-                                            <a href="#group-{{ $group['id'] }}" data-bs-toggle="tab" class="btn btn-outline-secondary">{{ $group['gp_name'] }}</a>
+                                            <a href="#group-{{ $group['id'] }}" data-bs-toggle="tab" class="btn btn-outline-primary">{{ $group['gp_name'] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -179,7 +185,6 @@
             var search_content = $("#searchText").val();
             //var search_content = search_content.toLowerCase();
             if($.trim(search_content)!="") {
-                console.log($.trim(search_content));
                 $(".col").hide().filter(":contains('"+search_content+"')").show();
             } else {
                 $(".col").show();

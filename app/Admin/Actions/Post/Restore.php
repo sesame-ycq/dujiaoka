@@ -31,7 +31,7 @@ class Restore extends RowAction
     {
         $key = $this->getKey();
         $model = $request->get('model');
-
+        print_r($key);
         $model::withTrashed()->findOrFail($key)->restore();
 
         return $this->response()->success(admin_trans('dujiaoka.restored'))->refresh();

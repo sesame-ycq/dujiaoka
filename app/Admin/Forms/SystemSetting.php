@@ -30,8 +30,10 @@ class SystemSetting extends Form
     {
         $this->tab(admin_trans('system-setting.labels.base_setting'), function () {
             $this->text('title', admin_trans('system-setting.fields.title'))->required();
-            $this->image('img_logo', admin_trans('system-setting.fields.img_logo'));
+            $this->image('img_logo', admin_trans('system-setting.fields.img_logo'))->saveFullUrl(true);
             $this->text('text_logo', admin_trans('system-setting.fields.text_logo'));
+            $this->text('homeHead1', admin_trans('system-setting.fields.homeHead1'));
+            $this->text('homeHead2', admin_trans('system-setting.fields.homeHead2'));
             $this->text('keywords', admin_trans('system-setting.fields.keywords'));
             $this->textarea('description', admin_trans('system-setting.fields.description'));
             $this->select('template', admin_trans('system-setting.fields.template'))
@@ -87,6 +89,16 @@ class SystemSetting extends Form
             $this->text('geetest_id', admin_trans('system-setting.fields.geetest_id'));
             $this->text('geetest_key', admin_trans('system-setting.fields.geetest_key'));
             $this->switch('is_open_geetest', admin_trans('system-setting.fields.is_open_geetest'))->default(BaseModel::STATUS_CLOSE);
+        });
+        // 动态页面配置
+        $this->tab('页面配置', function () {
+            $this->text('tokenUrl', 'token使用详情url')->default('http://api.hongyong.top/api/log/token');
+            $this->text('gptUrl', 'Chat服务器地址')->default('https://chat.nebofeng.com/');
+
+        });
+        // 使用文档功能
+        $this-> tab(admin_trans('system-setting.labels.doc'), function () {
+            $this-> file('doc',admin_trans(('system-setting.fields.doc'))) ->accept('pdf')->saveFullUrl(true);
         });
         $this->confirm(
             admin_trans('dujiaoka.warning_title'),

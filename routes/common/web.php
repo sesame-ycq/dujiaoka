@@ -28,7 +28,9 @@ Route::group(['middleware' => ['dujiaoka.boot'],'namespace' => 'Home'], function
     Route::post('token-detail', 'TokenController@token');
     Route::get('token-detail', 'TokenController@page');
     // chat聊天页面
-    Route::get('chat', 'OrderController@orderSearch');
+    Route::get('chat', 'ChatController@index');
+    // 使用文档页面
+    Route::get('doc', 'ChatController@prjDocPdf');
     // 检查订单状态
     Route::get('check-order-status/{orderSN}', 'OrderController@checkOrderStatus');
     // 通过订单号查询

@@ -6,7 +6,7 @@
                 <div class="header-left clearfix">
                     <div class="logo text-center  d-none d-md-block">
                         <a href="/">
-                            <img src="<?php echo e(picture_ulr(dujiaoka_config_get('img_logo')), false); ?>" alt="Logo">
+                            <img src="<?php echo e(dujiaoka_config_get('img_logo'), false); ?>" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -14,31 +14,36 @@
             <div class="col-md-9">
                 <div class="header-right clearfix">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="container-fluid">
-                            <a class="navbar-brand" href="/"><?php echo e(dujiaoka_config_get('text_logo'), false); ?></a>
+                        <div class="container-fluid p-md-0">
+                            <!-- <a class="navbar-brand" href="/"><?php echo e(dujiaoka_config_get('text_logo'), false); ?></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false"
                                     aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
-                            </button>
+                            </button> -->
 
                             <div class="collapse navbar-collapse" id="navbarColor">
                                 <ul class="navbar-nav me-auto">
-                                    <li class="nav-item">
+                                    <li class="nav-item nav-icon-container">
+                                        <i ><?=assets_svg_get('house-door-fill')?></i>
                                         <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::path() == '/'): ?> fw-bolder active <?php endif; ?> " href="/"><?php echo e(__('dujiaoka.home_page'), false); ?>
 
                                         </a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item nav-icon-container">
+                                        <i style="color:#f0ad4e;"><?=assets_svg_get('credit-card')?></i>
                                         <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('order-search')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('order-search'), false); ?>"><?php echo e(__('dujiaoka.order_search'), false); ?></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item nav-icon-container">
+                                        <i style="color:blueviolet;"><?=assets_svg_get('list')?></i>
                                         <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('token-detail')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('token-detail'), false); ?>"><?php echo e(__('dujiaoka.token_detail'), false); ?></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item nav-icon-container">
+                                        <i style="color:green;"><?=assets_svg_get('chat-dots')?></i>
                                         <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('chat')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('chat'), false); ?>"><?php echo e(__('dujiaoka.chat'), false); ?></a>
                                     </li>
-                                    <li class="nav-item">
+                                    <li class="nav-item nav-icon-container">
+                                        <i style="color:#d9534f;"><?=assets_svg_get('question-circle')?></i>
                                         <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('doc')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('doc'), false); ?>"><?php echo e(__('dujiaoka.doc'), false); ?></a>
                                     </li>
                                 </ul>

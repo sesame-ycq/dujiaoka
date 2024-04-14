@@ -74,3 +74,15 @@ body{
     background-image: url(../img/chatbg.png);
     background-repeat: round;
 }
+.chat-iframe{
+    width: 100%;
+    height: calc(100vh - 150px);
+}
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+}
+.nav-icon-containe:first-child(){
+    margin-left: 0;
+}
