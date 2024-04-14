@@ -1,7 +1,9 @@
 <?php
 
 return [
-
+    'token_detail'=> '使用详情',
+    'chat'=> 'Chat',
+    'doc'=> '文档',
     //luna模板
     'home_choice_cate' => '选择分类',
     'home_choice_goods' => '选择商品',

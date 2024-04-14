@@ -24,6 +24,11 @@ Route::group(['middleware' => ['dujiaoka.boot'],'namespace' => 'Home'], function
     Route::get('detail-order-sn/{orderSN}', 'OrderController@detailOrderSN');
     // 订单查询页
     Route::get('order-search', 'OrderController@orderSearch');
+    // token使用详情
+    Route::post('token-detail', 'TokenController@token');
+    Route::get('token-detail', 'TokenController@page');
+    // chat聊天页面
+    Route::get('chat', 'OrderController@orderSearch');
     // 检查订单状态
     Route::get('check-order-status/{orderSN}', 'OrderController@checkOrderStatus');
     // 通过订单号查询

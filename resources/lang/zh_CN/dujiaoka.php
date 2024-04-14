@@ -90,7 +90,9 @@ return [
     'pay_order_expiration_date_prompt' => '请打开 APP 扫码支付！有效期:min分钟',
     'money_symbol' => '￥',
     'purchase_limit' => '每单限',
-
+    'token_detail'=> '记录查询',
+    'chat'=> 'Chat',
+    'doc'=> '文档',
 
     'prompt' => [
         'server_illegal_request' => '非法请求！',
@@ -124,7 +126,8 @@ return [
         'no_related_order_found_for_cache' => '未找到相关订单缓存！',
         'no_related_order_found' => '未找到相关订单！',
         'new_order_push' => '新订单通知',
-        'loop_carmis_limit' => '此商品最多购买一件！'
+        'loop_carmis_limit' => '此商品最多购买一件！',
+        'token_does_not_exist' => '请输入需要查询的token'
     ],
 
     'equipment' => [
@@ -142,6 +145,9 @@ return [
 
     'page-title' => [
         'home' => '首页',
+        'token_detail'=> '记录查询',
+        'chat'=> 'Chat',
+        'doc'=> '文档',
         'bill' => '订单确认',
         'order-detail' => '订单详情',
         'order-search' => '订单查询'

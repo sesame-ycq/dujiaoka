@@ -9,6 +9,9 @@ return [
     'error_error'         => '错误',
     'order_search'        => '查询订单',
     'global_currency'     => '¥',
+    'token_detail'=> '使用详情',
+    'chat'=> 'Chat',
+    'doc'=> '文档',
 
     # home.blade.php
 
@@ -27,6 +30,7 @@ return [
     'home_whole'              => '全部',
     'home_tip'                =>'提示',
     'home_sell_out_tip'       =>'商品缺货',
+    
 
     # buy.blade.php
     'buy_title'                 => '产品详细信息',

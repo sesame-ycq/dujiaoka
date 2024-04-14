@@ -6,7 +6,7 @@
                 <div class="header-left clearfix">
                     <div class="logo text-center  d-none d-md-block">
                         <a href="/">
-                            <img src="{{ picture_ulr(dujiaoka_config_get('img_logo')) }}" alt="Logo">
+                            <img src="<?php echo e(picture_ulr(dujiaoka_config_get('img_logo')), false); ?>" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                 <div class="header-right clearfix">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="/">{{ dujiaoka_config_get('text_logo') }}</a>
+                            <a class="navbar-brand" href="/"><?php echo e(dujiaoka_config_get('text_logo'), false); ?></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#navbarColor" aria-controls="navbarColor" aria-expanded="false"
                                     aria-label="Toggle navigation">
@@ -25,30 +25,31 @@
                             <div class="collapse navbar-collapse" id="navbarColor">
                                 <ul class="navbar-nav me-auto">
                                     <li class="nav-item">
-                                        <a class="nav-link fs-6 @if(\Illuminate\Support\Facades\Request::path() == '/') fw-bolder active @endif " href="/">{{__('dujiaoka.home_page')}}
+                                        <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::path() == '/'): ?> fw-bolder active <?php endif; ?> " href="/"><?php echo e(__('dujiaoka.home_page'), false); ?>
+
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fs-6 @if(\Illuminate\Support\Facades\Request::url() == url('order-search')) fw-bolder active @endif" href="{{ url('order-search') }}">{{ __('dujiaoka.order_search') }}</a>
+                                        <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('order-search')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('order-search'), false); ?>"><?php echo e(__('dujiaoka.order_search'), false); ?></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fs-6 @if(\Illuminate\Support\Facades\Request::url() == url('token-detail')) fw-bolder active @endif" href="{{ url('token-detail') }}">{{ __('dujiaoka.token_detail') }}</a>
+                                        <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('token-detail')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('token-detail'), false); ?>"><?php echo e(__('dujiaoka.token_detail'), false); ?></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fs-6 @if(\Illuminate\Support\Facades\Request::url() == url('chat')) fw-bolder active @endif" href="{{ url('chat') }}">{{ __('dujiaoka.chat') }}</a>
+                                        <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('chat')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('chat'), false); ?>"><?php echo e(__('dujiaoka.chat'), false); ?></a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link fs-6 @if(\Illuminate\Support\Facades\Request::url() == url('doc')) fw-bolder active @endif" href="{{ url('doc') }}">{{ __('dujiaoka.doc') }}</a>
+                                        <a class="nav-link fs-6 <?php if(\Illuminate\Support\Facades\Request::url() == url('doc')): ?> fw-bolder active <?php endif; ?>" href="<?php echo e(url('doc'), false); ?>"><?php echo e(__('dujiaoka.doc'), false); ?></a>
                                     </li>
                                 </ul>
-                                @if(\Illuminate\Support\Facades\Request::path() == '/')
+                                <?php if(\Illuminate\Support\Facades\Request::path() == '/'): ?>
                                     <form class="d-flex">
-                                        <input class="form-control form-control-sm me-sm-2" id="searchText" type="text" placeholder="{{ __('dujiaoka.search_goods_name') }}">
+                                        <input class="form-control form-control-sm me-sm-2" id="searchText" type="text" placeholder="<?php echo e(__('dujiaoka.search_goods_name'), false); ?>">
                                         <button class="btn btn-secondary my-2 my-sm-0" type="button" id="searchBtn">
                                             <i class="ali-icon">&#xe65c;</i>
                                         </button>
                                     </form>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                     </nav>
@@ -58,3 +59,4 @@
     </div>
 </header>
 <!-- header end -->
+<?php /**PATH F:\dujiaoka\resources\views/unicorn/layouts/_nav.blade.php ENDPATH**/ ?>

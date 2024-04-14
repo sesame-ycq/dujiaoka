@@ -70,3 +70,7 @@
 .footer {
     background-color:transparent;
 }
+body{
+    background-image: url(../img/chatbg.png);
+    background-repeat: round;
+}
