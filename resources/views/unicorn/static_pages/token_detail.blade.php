@@ -8,6 +8,7 @@
             <div class="col-12">
                 <input type="text" style="width: 500px;" class="form-control form-control-sm"
                         id="token"  name="token" required placeholder="请输入查询token">
+
             </div>
             <div class="col-12">
                 <button type="submit" class="btn btn-outline-primary btn-sm">
